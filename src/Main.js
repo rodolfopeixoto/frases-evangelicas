@@ -10,8 +10,10 @@ import {
   Text,
   View,
   Button,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
+import Foto from './images/foto.jpg';
 
 const btnPress = () => {
     alert('Botão pressionado');
@@ -37,6 +39,12 @@ const styles = StyleSheet.create({
       fontSize: 16,
       fontWeight: 'bold',
       alignSelf: 'center'
+    },
+    image: {
+      margin: 20,
+      alignSelf: 'center', 
+      width: 200,
+      height: 200
     }
 });
 
@@ -46,7 +54,7 @@ export default class frases extends Component {
 
   render() {
 
-    const { main, touch, text } = styles;
+    const { main, touch, text, image } = styles;
 
     return (
       <View style={main}>
@@ -58,6 +66,8 @@ export default class frases extends Component {
           title="Visualizar mensagem"
           accessibilityLabel="Clique para abrir as notícias"
         />
+
+        <Image style={ image } source={ require('./images/foto.jpg') } />
 
        <TouchableOpacity style={touch}>
          <Text style={text}>Clique Aqui</Text>
